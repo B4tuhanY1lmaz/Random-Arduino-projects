@@ -26,8 +26,17 @@ void loop() {
   }
  digitalWrite(LED_BUILTIN, HIGH);
  Serial.write("Blink!");
+ myGLCD.print("Blink!", CENTER, 20);
  delay(900);
  digitalWrite(LED_BUILTIN, LOW);
+ myGLCD.clrScr();
  delay(900);
+
+if (digitalRead(LED_BUILTIN) == HIGH){
+  Serial.write("It Works");
+  //myGLCD.print("Blink!", CENTER, 20);
+  delay(1000);
+  //myGLCD.clrScr();
+}
 
 }
